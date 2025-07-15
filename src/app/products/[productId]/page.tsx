@@ -1,13 +1,13 @@
-import "./page.css";
 export default async function ProductDetails({
   params,
 }: {
   params: Promise<{ productId: string }>;
 }) {
   const productId = (await params).productId;
+  console.log(`The params is : ${params}`);
   return (
     <div>
-      <h1 className="text-center-al">Sowing details for {productId}</h1>
+      <h1>Showing Product for {productId}</h1>
     </div>
   );
 }
