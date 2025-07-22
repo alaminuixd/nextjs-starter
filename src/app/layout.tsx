@@ -1,9 +1,15 @@
+import { Metadata } from "next";
+import "./globals.css";
 import Footer from "./components/footer";
 import Header from "./components/header";
 
-const metadata = {
-  title: "Al Amin Khan App",
-  description: "Powered by Al Amin",
+export const metadata: Metadata = {
+  title: {
+    default: "Next.js Tutorial by Al Amin",
+    template: "%s | by Al Amin",
+    absolute: "",
+  },
+  description: "Developed by Al Amin",
 };
 export default function RootLayout({
   children,
@@ -12,7 +18,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body style={{ fontFamily: "Poppins, Arial" }}>
+      <body>
         <Header />
         {children}
         <Footer />

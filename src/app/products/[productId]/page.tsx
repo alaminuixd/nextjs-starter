@@ -1,13 +1,20 @@
-export default async function ProductDetails({
-  params,
-}: {
+import { Metadata } from "next";
+type ProductParams = {
   params: Promise<{ productId: string }>;
-}) {
-  const productId = (await params).productId;
-  console.log(`The params is : ${params}`);
-  return (
-    <div>
-      <h1>Showing Product for {productId}</h1>
-    </div>
-  );
+};
+
+export const generateMetadata = async ({
+  params,
+}: ProductParams): Promise<Metadata> => {
+  const id = (await params).productId;
+  const title = await new Promise((resolve) => {
+    setTimeout(() => resolve(`iPhone ${id}`), 1000);
+  });
+  return {
+    title: `Product ${title}`,
+  };
+};
+export default async function ProductDetails({ params }: ProductParams) {
+  const { productId } = await params;
+  return <h1>Showing product {productId}</h1>;
 }

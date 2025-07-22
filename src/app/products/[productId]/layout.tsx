@@ -1,7 +1,8 @@
 export const metadata = {
-  title: "Products",
-  description: "Product metadata",
+  title: "Our products",
+  description: "Developed by Al Amin",
 };
+
 export default function ProductDetailsLayout({
   children,
 }: {
