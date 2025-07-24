@@ -6,11 +6,7 @@ export const metadata = {
 };
 export default function Home() {
   return (
-    <div className="p-5">
-      <div>
-        <Link href={"/about"}>About</Link>
-        <Link href={"/blog"}>Blog</Link>
-      </div>
+    <div className="">
       <h1 className="text-center text-3xl">Home Page</h1>
     </div>
   );
