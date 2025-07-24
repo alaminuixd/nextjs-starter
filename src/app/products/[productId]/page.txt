@@ -1,0 +1,49 @@
+import { Metadata } from "next";
+
+type ProductParams = {
+  params: Promise<{ productId: string }>; // ✅ Promise required in Next.js 15
+};
+
+const products = [
+  {
+    id: 1,
+    title: "iPhone 11 pro max",
+    details: "Lorem ipsum dolor sit amet...",
+  },
+  {
+    id: 2,
+    title: "Samsung Relax 34",
+    details: "Optio in inventore, dignissimos...",
+  },
+  {
+    id: 3,
+    title: "Nokia End Point",
+    details: "Vitae, unde tempora?...",
+  },
+];
+
+export const generateMetadata = async ({
+  params,
+}: ProductParams): Promise<Metadata> => {
+  const { productId } = await params; // ✅ Must await
+  const product = products.find((p) => p.id === +productId);
+  return {
+    title: product ? `Product - ${product.title}` : "Product Not Found",
+  };
+};
+
+export default async function ProductDetails({ params }: ProductParams) {
+  const { productId } = await params; // ✅ Must await
+  const product = products.find((p) => p.id === +productId);
+
+  if (!product) {
+    return <h1>Product Not Found</h1>;
+  }
+
+  return (
+    <div className="text-center max-w-6xl mx-auto">
+      <h1>{product.title}</h1>
+      <p>{product.details}</p>
+    </div>
+  );
+}
