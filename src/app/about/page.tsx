@@ -3,5 +3,9 @@ export const metadata = {
   description: "About the company by Al Amin",
 };
 export default function About() {
-  return <h1>About Us</h1>;
+  return (
+    <div className="p-5">
+      <h1 className="text-center">About Us</h1>
+    </div>
+  );
 }
