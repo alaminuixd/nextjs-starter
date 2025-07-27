@@ -1,25 +1,35 @@
 "use client";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-// we removed "async" from the function and "await" is replaced by "use()"
-// This is because "use client" can't be used with "async await" components
 import { use } from "react";
-
-// important: "searchParams" is not available in "layout" component.
-type ParamsType = {
+type NewsParams = {
   params: Promise<{ articleId: string }>;
   searchParams: Promise<{ lang?: "en" | "es" | "fr" }>;
 };
-
-export default function NewsArticle({ params, searchParams }: ParamsType) {
+export default function NewsArticle({ params, searchParams }: NewsParams) {
   const { articleId } = use(params);
-  const { lang = "en" } = use(searchParams);
-  const pathName = usePathname();
-  console.log(pathName);
+  const { lang } = use(searchParams);
+  console.log(articleId);
+  console.log(lang);
+
+  const langMap: Record<string, string> = {
+    en: "English Language",
+    es: "Spanish Language",
+    fr: "French Language",
+  };
+
   return (
     <div className="max-w-7xl mx-auto my-10">
       <h1 className="text-center">News Article {articleId}</h1>
-      <p className="text-center">Reading in {lang.toUpperCase()}</p>
+      <p className="text-center">
+        Reading in {langMap[lang ?? ""] ?? lang ?? "Unknown"}
+        {/* {lang === "en"
+          ? "English"
+          : lang === "es"
+          ? "Spenish"
+          : lang === "fr"
+          ? "French"
+          : lang} */}
+      </p>
       <div className="mt-10 flex gap-5">
         <Link href={`/articles/${articleId}?lang=en`}>English</Link>
         <Link href={`/articles/${articleId}?lang=es`}>Spanish</Link>

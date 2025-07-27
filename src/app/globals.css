@@ -19,8 +19,14 @@
   }
 }
 
-.btn-paimary {
+.btn-primary {
   @apply bg-green-700 text-white rounded px-7 py-4 cursor-pointer;
+}
+.btn-danger {
+  @apply px-5 py-2 bg-red-600 text-white rounded-full shadow-sm hover:bg-red-700 transition-all cursor-pointer;
+}
+.btn-success {
+  @apply px-5 py-2 bg-green-600 text-white rounded-full shadow-sm hover:bg-green-700 transition-all cursor-pointer;
 }
 
 body {
