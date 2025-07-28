@@ -1,12 +1,14 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: {
-    absolute: "Blog",
-  },
+  title: "My Blog. Do you like this?",
 };
-
-export default function Blog() {
+export default async function Blog() {
+  await new Promise((resolve) => {
+    setTimeout(() => {
+      resolve("Intentionally delayed.");
+    }, 3000);
+  });
   return (
     <div className="text-center py-5 max-w-7xl mx-auto">
       <h1>Our Blog Page</h1>

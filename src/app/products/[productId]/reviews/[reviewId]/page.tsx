@@ -1,4 +1,9 @@
 import { notFound, redirect } from "next/navigation";
+
+const getRandom = (count: number) => {
+  return Math.floor(Math.random() * count);
+};
+
 export default async function ({
   params,
 }: {
@@ -8,6 +13,10 @@ export default async function ({
   if (parseInt(reviewId) > 100) {
     // notFound();
     redirect("/products");
+  }
+  const random = getRandom(5);
+  if (random === 1) {
+    throw new Error("Error loading review");
   }
   return (
     <div>
