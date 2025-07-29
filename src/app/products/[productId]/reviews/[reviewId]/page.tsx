@@ -10,7 +10,7 @@ export default async function ({
   params: Promise<{ productId: string; reviewId: string }>;
 }) {
   const { productId, reviewId } = await params;
-  if (parseInt(reviewId) > 100) {
+  if (+reviewId > 100) {
     // notFound();
     redirect("/products");
   }

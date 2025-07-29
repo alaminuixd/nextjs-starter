@@ -23,7 +23,7 @@ export default function Auth() {
           type="text"
           value={input}
           onChange={(e) => setInput(e.target.value)}
-          placeholder="Type your value"
+          placeholder="But template state value resets on URL change"
         />
       </div>
       <div className="flex gap-5 py-5">

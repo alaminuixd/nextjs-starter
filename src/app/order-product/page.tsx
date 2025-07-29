@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import ConfirmBox from "./confirmBox";
 
 export default function OrderProduct() {
+  // Note: "useRouter" only works on client compnent
   const router = useRouter();
   const [showConfirmBox, setShowConfirmBox] = useState(false);
   const [confirm, setConfirm] = useState(false);

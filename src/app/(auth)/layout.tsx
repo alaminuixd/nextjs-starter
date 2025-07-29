@@ -18,7 +18,7 @@ export default function RootLayout({
           type="text"
           value={input}
           onChange={(e) => setInput(e.target.value)}
-          placeholder="Type your value"
+          placeholder="Layout state value stays intact on URL change"
         />
       </div>
       {children}
