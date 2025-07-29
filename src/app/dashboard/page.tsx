@@ -4,7 +4,7 @@ function BarChart() {
 export default function Dashboard() {
   return (
     <div>
-      <h1>Bar Chart</h1>
+      <h1>{BarChart()}</h1>
     </div>
   );
 }

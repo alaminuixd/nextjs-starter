@@ -1,10 +1,10 @@
-import { notFound, redirect } from "next/navigation";
+import { /* notFound, */ redirect } from "next/navigation";
 
-const getRandom = (count: number) => {
+/* const getRandom = (count: number) => {
   return Math.floor(Math.random() * count);
-};
+}; */
 
-export default async function ({
+export default async function ReviewDetails({
   params,
 }: {
   params: Promise<{ productId: string; reviewId: string }>;
@@ -14,10 +14,10 @@ export default async function ({
     // notFound();
     redirect("/products");
   }
-  const random = getRandom(5);
+  /*   const random = getRandom(5);
   if (random === 1) {
     throw new Error("Error loading review");
-  }
+  } */
   return (
     <div>
       <h2>

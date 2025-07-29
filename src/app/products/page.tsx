@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 export default function ProductList() {
   return (
     <div className="max-w-7xl mx-auto py-5 text-center">

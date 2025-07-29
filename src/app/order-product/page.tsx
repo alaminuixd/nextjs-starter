@@ -16,8 +16,10 @@ export default function OrderProduct() {
 
   useEffect(() => {
     console.log("placing your order");
-    confirm && router.push("/");
-  }, [confirm]);
+    if (confirm) {
+      router.push("/");
+    }
+  }, [confirm, router]);
 
   return (
     <div className="max-w-7xl mx-auto my-10 text-center">

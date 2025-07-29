@@ -1,3 +1,7 @@
+const getRandom = (count: number) => {
+  return Math.floor(Math.random() * count);
+};
+
 export const metadata = {
   title: "Our products",
   description: "Developed by Al Amin",
@@ -8,6 +12,10 @@ export default function ProductDetailsLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const randomNum = getRandom(5);
+  if (randomNum === 1) {
+    throw new Error("Error loading products");
+  }
   return (
     <>
       {children}
