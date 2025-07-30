@@ -10,11 +10,10 @@ export default function Header() {
         <Link href={"/blog"}>Blog</Link>
         <Link href={"/products"}>Product</Link>
         <Link href={"/register"}>Members</Link>
-        <Link href={"/articles/breaking-news-123?lang=en"}>
-          Read in English
-        </Link>
-        <Link href={"/articles/breaking-news-123?lang=fr"}>Read in French</Link>
+        <Link href={"/articles/breaking-news-123?lang=en"}>Read En</Link>
+        <Link href={"/articles/breaking-news-123?lang=fr"}>Read Fr</Link>
         <Link href={"/order-product"}>Order Product</Link>
+        <Link href={"/complex-dashboard"}>Dashboard</Link>
       </div>
     </header>
   );
