@@ -1,9 +1,7 @@
-import Link from "next/link";
-
-export default function F3() {
+export default function F4() {
   return (
     <div>
-      <h1>Folder 3 page</h1>
+      <h1>Folder 4 page</h1>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
         molestiae excepturi. Rerum libero necessitatibus cupiditate quasi! Alias

@@ -7,6 +7,7 @@ export default function F1() {
       <div className="flex gap-5">
         <Link href={"/f1/f2"}>F2</Link>
         <Link href={"/f3"}>F3</Link>
+        <Link href={"/f4"}>F4</Link>
       </div>
     </div>
   );
