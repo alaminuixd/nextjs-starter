@@ -1,4 +1,5 @@
 import { StaticImageData } from "next/image";
+import { v4 as uuidv4 } from "uuid";
 import photo1 from "./photos/1.jpg";
 import photo2 from "./photos/2.jpg";
 import photo3 from "./photos/3.jpg";
@@ -17,49 +18,49 @@ export type WonderImage = {
 
 const wondersImages: WonderImage[] = [
   {
-    id: "1",
+    id: uuidv4(),
     name: "Great Wall of China",
     src: photo1,
     photographer: "Photo by Max van den Oetelaar on Unsplash",
     location: "China",
   },
   {
-    id: "2",
+    id: uuidv4(),
     name: "Petra",
     src: photo2,
     photographer: "Photo by Reiseuhu on Unsplash",
     location: "Jordan",
   },
   {
-    id: "3",
+    id: uuidv4(),
     name: "Christ the Redeemer",
     src: photo3,
     photographer: "Photo by Andrea Leopardi on Unsplash",
     location: "Brazil",
   },
   {
-    id: "4",
+    id: uuidv4(),
     name: "Machu Picchu",
     src: photo4,
     photographer: "Photo by Jared Schwitzke on Unsplash",
     location: "Peru",
   },
   {
-    id: "5",
+    id: uuidv4(),
     name: "Chichen Itza",
     src: photo5,
     photographer: "Photo by E Mens on Unsplash",
     location: "Mexico",
   },
   {
-    id: "6",
+    id: uuidv4(),
     name: "Roman Colosseum",
     src: photo6,
     photographer: "Photo by Andrea Cipriano on Unsplash",
     location: "Italy",
   },
   {
-    id: "7",
+    id: uuidv4(),
     name: "Taj Mahal",
     src: photo7,
     photographer: "Photo by Su San Lee on Unsplash",
